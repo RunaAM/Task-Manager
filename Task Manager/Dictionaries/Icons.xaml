@@ -1,0 +1,4 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <PathGeometry x:Key="NewTask" Figures="M12.37 8.87988H17.62 M6.38 8.87988L7.13 9.62988L9.38 7.37988 M12.37 15.8799H17.62 M6.38 15.8799L7.13 16.6299L9.38 14.3799 M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"/>
+</ResourceDictionary>
