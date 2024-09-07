@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task_Manager.Models
 {
-    internal class TaskChecklist
+    public class TaskChecklist
     {
         public string Description { get; set; }
         public bool IsComplete  { get; set; }

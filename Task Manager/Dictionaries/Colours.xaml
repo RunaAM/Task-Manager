@@ -17,6 +17,9 @@
     <SolidColorBrush x:Key="OnAccent" Color="#FFFFFFFF"/>
     <!--Placeholder Text Colour-->
     <SolidColorBrush x:Key="PlaceholderText" Color="#FF868686"/>
+    
+    <!--Placeholder Border Colour-->
+    <SolidColorBrush x:Key="PlaceholderBorder" Color="#FF949494"/>
 
     <SolidColorBrush x:Key="CompleteButton" Color="#FF57B186"/>
     <SolidColorBrush x:Key="CompleteButtonOver" Color="#FF4B886B"/>
@@ -62,5 +65,7 @@
     <SolidColorBrush x:Key="NavOver" Color="#FF396A84"/>
     <SolidColorBrush x:Key="NavClick" Color="#FF87B7D0"/>
 
+
+    <SolidColorBrush x:Key="TaskListUCText" Color="#FF838383"/>
 
 </ResourceDictionary>

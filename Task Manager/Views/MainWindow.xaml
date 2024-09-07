@@ -3,12 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Task_Manager.ViewModels"
         xmlns:local="clr-namespace:Task_Manager"
         mc:Ignorable="d"
         Title="MainWindow" Height="830" Width="1200"
         MinHeight="450"
         MinWidth="1150"
         WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         <Storyboard x:Key="SlideOnLoad">
             <DoubleAnimation Storyboard.TargetProperty="Opacity"
@@ -26,7 +30,7 @@
             </ThicknessAnimation>
         </Storyboard>
     </Window.Resources>
-    <Grid Opacity="0" Margin="0 100 0 0">
+    <Grid Opacity="1" Margin="0 100 0 0">
         <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}"/>
@@ -76,7 +80,11 @@
                     Height="40"
                     Width="40"
                     Margin="20 0" Grid.Column="1"
+                    Command="{Binding IOpenNewWindow}"
                     >
+                <Button.DataContext>
+                    <vm:MainWindowViewModel/>
+                </Button.DataContext>
                 <!--Icon-->
                 <Viewbox Width="15">
                     <Path Data="{StaticResource NewTask}" 
