@@ -20,7 +20,7 @@ namespace Task_Manager.Models
         public TaskImportance TaskImportance { get; set; }
         public TaskState TaskState { get; set; }
 
-        public ObservableCollection<TaskChecklist>  TaskChecklist {get;set;}
+        public ObservableCollection<TaskChecklist> TaskChecklist { get; set; }
     }
     public enum TaskState
     {
@@ -50,12 +50,6 @@ namespace Task_Manager.Models
         Projects,
         LongTermGoal
     }
-
-    public enum TaskImportance
-    {
-        Low,
-        Medium,
-        High,
-        Critical
-    }
 }
+
+    

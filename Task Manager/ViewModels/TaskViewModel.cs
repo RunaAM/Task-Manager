@@ -29,6 +29,8 @@ namespace Task_Manager.ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
         private ObservableCollection<Task> _tasks;
 
+        
+
         public ObservableCollection<Task> Tasks
         {
             get => _tasks;
@@ -54,12 +56,14 @@ namespace Task_Manager.ViewModels
                 IsCompleted=false,
                 StartDate= DateTime.Now,
                 TaskCategory=TaskCategory.Education,
-                TaskImportance=TaskImportance.Critical,
+                TaskImportance=this.TaskImportance,
                 TaskState=TaskState.Late,
                 Timer=new TimeSpan(0)
             };
             _taskDataService.AddTask(newTask);
             LoadTasks();
+
+            ClearFields();
         }
         public void UpdateTask(Task updateTask)
         {
@@ -72,9 +76,21 @@ namespace Task_Manager.ViewModels
             LoadTasks();
         }
 
-
+        private void ClearFields()
+        {
+            Title = "";
+            OnPropertyChanged(Title);
+            Description="";
+            OnPropertyChanged(Description);
+            DueDate = DateTime.Now;
+            OnPropertyChanged(nameof(DueDate));
+            TaskChecklist.Clear();
+            OnPropertyChanged(nameof(TaskChecklist));
+        }
         public TaskViewModel()
         {
+            
+
             _taskDataService = new TaskDataService(); //initializing the TaskDataService
             TaskChecklist = new ObservableCollection<TaskChecklist>();
             DueDate=DateTime.Now;

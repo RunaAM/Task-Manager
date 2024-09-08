@@ -4,9 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task_Manager.Views"
+        xmlns:extensions="clr-namespace:Task_Manager.Extensions"
+        xmlns:models="clr-namespace:Task_Manager.Models"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="NewTaskWindow" Height="470" Width="450"
         WindowStartupLocation="CenterScreen">
+
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromEnum"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="models:TaskImportance"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
     <Grid Margin="10 0 0 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -38,7 +52,10 @@
                       Margin="20 0"
                       MinWidth="60"
                       Height="30"
-                      VerticalAlignment="Center"/>
+                      VerticalAlignment="Center"
+                      ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+                      SelectedValue="{Binding TaskImportance, UpdateSourceTrigger=PropertyChanged}">
+            </ComboBox>
         </Grid>
         
         

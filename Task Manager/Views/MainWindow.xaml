@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Task_Manager.ViewModels"
+        xmlns:v="clr-namespace:Task_Manager.Views"
         xmlns:local="clr-namespace:Task_Manager"
         mc:Ignorable="d"
         Title="MainWindow" Height="830" Width="1200"
@@ -121,8 +122,14 @@
             <ListView Grid.Row="2"
                       Background="Transparent"
                       Margin="0 20"
-                      BorderBrush="Transparent">
-                
+                      BorderBrush="Transparent"
+                      ItemsSource="{Binding TaskListItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <v:TaskListItem/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                   
             </ListView>
 
         </Grid>
